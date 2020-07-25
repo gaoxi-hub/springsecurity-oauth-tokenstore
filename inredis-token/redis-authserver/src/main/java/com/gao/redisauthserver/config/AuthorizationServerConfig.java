@@ -44,7 +44,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints.authenticationManager(authenticationManager)
                  .userDetailsService(customUserDetailService)
-                 .tokenStore(tokenStore());
+                 .tokenStore(tokenStore()).reuseRefreshTokens(false);
     }
 
     @Override
@@ -59,6 +59,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .secret(passwordEncoder.encode("yurun"))
                 .resourceIds("redis")
                 .authorizedGrantTypes("password","refresh_token")
+                .scopes("all")
+                .and()
+                .withClient("bi")
+                .secret(passwordEncoder.encode("yurun"))
+                .resourceIds("redis")
+                .authorizedGrantTypes("password","refresh_token")
                 .scopes("all");
+
     }
 }

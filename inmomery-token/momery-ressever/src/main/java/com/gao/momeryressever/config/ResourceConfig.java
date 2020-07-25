@@ -36,6 +36,7 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
     @Autowired
     RemoteTokenServices remoteTokenServices;
 
+
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         resources.resourceId("memory");

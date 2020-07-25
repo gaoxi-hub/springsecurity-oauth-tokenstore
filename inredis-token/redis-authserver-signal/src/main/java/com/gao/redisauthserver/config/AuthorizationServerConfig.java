@@ -95,6 +95,11 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .secret(passwordEncoder.encode("yurun"))
                 .resourceIds("redis")
                 .authorizedGrantTypes("password","refresh_token")
+                .scopes("all").and()
+                .withClient("yurun2")
+                .secret(passwordEncoder.encode("yurun"))
+                .resourceIds("redis2")
+                .authorizedGrantTypes("password","refresh_token")
                 .scopes("all");
     }
 }

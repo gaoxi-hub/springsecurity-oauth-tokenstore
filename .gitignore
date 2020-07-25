@@ -1,0 +1,9 @@
+# Project exclude paths
+/inmomery-token/momery-authserver/target/
+/inmomery-token/momery-authserver2/target/
+/inmomery-token/momery-ressever/target/
+/inredis-token/redis-authserver/target/
+/inredis-token/redis-authserver2/target/
+/inredis-token/redis-ressever/target/
+/jwt-token/jwt-authserver/target/
+/jwt-token/jwt-ressever/target/
